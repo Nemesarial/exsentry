@@ -1,6 +1,6 @@
 {
   "name": "exsentry",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Export Sentry issue events to CSV",
   "main": "bin/exsentry",
   "scripts": {},

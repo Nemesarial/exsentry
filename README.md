@@ -34,13 +34,13 @@ module.exports = {
 	}
 }
 ```
-**issueId** is the Sentry id for the issue you'd like to export.
-**csvExport.file** The default output file.
-**csvExport.includeHeaders** [boolean=true] Indicates whether you want headers to be printed in your CSV.
+**issueId** is the Sentry id for the issue you'd like to export.  
+**csvExport.file** The default output file.  
+**csvExport.includeHeaders** [boolean=true] Indicates whether you want headers to be printed in your CSV.  
 **csvExport.fieldMap** [object] The keys of this object will become fields in your CSV file. If you provide a string
 value for a field, `exsentry` will find the target property and populate your CSV with that. If you provide a function,
 `exsentry` will call that function for every event in your issue with that event as only input to the function. The
-output will be used in the generation of the field value.
+output will be used in the generation of the field value.  
 
 #### .exsentry.json Config file
 The credentials for use against Sentry could be specified as input parameters to the `exsentry` command. One could also
@@ -60,3 +60,21 @@ exsentry init <mapFile>
 ```
 This command will generate a skeleton mapFile and `.exsentry.json` file. Be careful though, this command overwrites
 files of the same name with no warning.
+
+### Command Line Interface for export
+```
+exsentry export <mapFile> [options]
+
+Export Sentry issue events to csv
+
+Positionals:
+  mapFile  The map file driving the csv export                        [required]
+
+Options:
+  --help       Show help                                               [boolean]
+  --version    Show version number                                     [boolean]
+  --dsn, -d    Sentry server to connect to
+  --token, -t  Authentication Token
+  --out, -o    Specify output file
+  --open, -x   Open the csv afterward
+```
